@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<title>stanford performing arts</title>
+</head>
+<body>
+
+<h1 style="color:red;font-size:50px;">Stanford performing Arts</h1>
+
+<div class="row">
+  <div class="column">
+    <h2>Bing concert hall</h2>
+    <img src="hall.jpg" width="300">
+    <p>the bing concert hall at stanford will play on campus and in the local community.</p>
+  </div>
+  <div class="column">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+
+</body>
+</html>
