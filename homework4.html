@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.calendar {
+  border-left: 2px solid gray;
+}
+
+.column img {
+  float: left;
+  margin-right: 15px;
+}
+
+.edition {
+  text-align: right;
+  color: red;
+  font-size: 14px;
+}
+</style>
+
+<title>Stanford Performing Arts</title>
+</head>
+
+<body>
+
+<h1 style="color:red;font-size:50px;">Stanford Performing Arts</h1>
+<p class="edition">Autumn 2012 <br>Edition</p>
+
+<div class="row">
+
+  <div class="column">
+    <h2>Bing Concert Hall</h2>
+    <img src="hall.jpg" width="200">
+    <p>
+      The Bing Concert Hall at Stanford will play on campus 
+      and in the local community. The hall is scheduled to 
+      open in early 2013.
+    </p>
+  </div>
+
+  <div class="column calendar">
+    <h2>Calendar</h2>
+
+    <p><ins>Harmony for Humanity: Daniel Pearl World Music Concert</ins></p>
+    <p><ins>Sunday with the St. Lawrence String Quartet</ins></p>
+    <p><ins>Merce Cunningham Dance Company</ins></p>
+    <p><ins>Juilliard String Quartet</ins></p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
