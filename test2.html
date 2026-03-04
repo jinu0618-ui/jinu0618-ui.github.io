@@ -1,39 +1,59 @@
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {
-  box-sizing: border-box;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
 }
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+td, th {
+  border: 5px solid #000;
+  text-align: left;
+  padding: 8px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+tr:nth-child(even) {
+  background-color: hsl(207, 78%, 74%);
 }
 </style>
 </head>
 <body>
 
-<div class="row">
-  <div class="column">
-    <h2>Stanford researchers find a quicker, cheaper way to sort isotopes</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column">
-    <h2>Chance to dance: Enthusiasts fly to stanford for dance weekend</h2>
-    <p>Some text..</p>
-  </div>
-</div>
+<h2>Geographic Origin of Stanford undergrads</h2>
+
+<table>
+  <tr style="background-color:powderblue;">
+    <th>Company</th>
+    <th>Contact</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+
+  </tr>
+</table>
 
 </body>
 </html>
+
