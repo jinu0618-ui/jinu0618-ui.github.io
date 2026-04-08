@@ -141,45 +141,52 @@ td, th {
 </table>
 </form>
 
+
 <?php 
+$today = date("y.m.d.h:i:s a");
 if (isset($_GET["name"]) && isset($_GET["select1"])
    && isset($_GET["select2"]) && isset($_GET["select3"])
    && isset($_GET["select4"]) && isset($_GET["select5"])
    && isset($_GET["select6"]) && isset($_GET["select7"])
    && isset($_GET["select8"])){
-echo "today is " . date("y.m.d.h:i:s a") . "<br>";
- echo "고객이름 : ". $_GET["name"]. "<br>";
- echo "어린이 입장권: " . $_GET['select1']."<br>";
- echo "어른 입장권: " . $_GET['select2']."<br>"; 
- echo "BIG3 어린이 입장권: " . $_GET['select3']."<br>"; 
- echo "BIG3 어른 입장권: " . $_GET['select4']."<br>"; 
- echo "어른 자유이용권: " . $_GET['select5']."<br>"; 
- echo "어린이 자유이용권: " . $_GET['select6']."<br>"; 
- echo "어른 연관이용권: " . $_GET['select7']."<br>"; 
- echo "어린이 연관이용권: " . $_GET['select8']."<br>";  
+echo date("y년 m월 d일 h:i분") . "<br>";
+ echo $_GET["name"]. " 고객님 감사합니다.". "<br>";
+if ($_GET["select1"] > 0)
+ echo "어린이 입장권: " . $_GET['select1']."매". "<br>";
+if ($_GET["select2"] > 0)
+ echo "어른 입장권: " . $_GET['select2']."매"."<br>"; 
+if ($_GET["select3"] > 0)
+ echo "BIG3 어린이 입장권: " . $_GET['select3']."매"."<br>"; 
+if ($_GET["select4"] > 0)
+ echo "BIG3 어른 입장권: " . $_GET['select4']."매"."<br>"; 
+if ($_GET["select5"] > 0)
+ echo "어른 자유이용권: " . $_GET['select5']."매"."<br>"; 
+if ($_GET["select6"] > 0)
+ echo "어린이 자유이용권: " . $_GET['select6']."매"."<br>"; 
+if ($_GET["select7"] > 0)
+ echo "어른 연관이용권: " . $_GET['select7']."매"."<br>"; 
+if ($_GET["select8"] > 0)
+ echo "어린이 연관이용권: " . $_GET['select8']."매"."<br>";  
  $Total = 7*$_GET['select1']+10*$_GET['select2']+
  12*$_GET['select3']+16*$_GET['select4']+
  21*$_GET['select5']+26*$_GET['select6']+
  70*$_GET['select7']+90*$_GET['select8'];
- echo "합계: ". $Total*1000 . "<br>";
+ echo "합계 ". $Total*1000 . "입니다.". "<br>";
 
-           $sql= "INSERT INTO  users 
-           (date, enterchild, name , enteradult, BIG3child ,BIG3adult ,freechild ,freeadult ,yearchild ,yearadult)
-           VALUES ( 
-           '".date("y.m.d.h:i:s a")."', 
-           '".$_GET['select1']."',
-           '".$_GET['name']."',
-           '".$_GET['select2']."', 
-           '".$_GET['select3']."',  
-           '".$_GET['select4']."',
-           '".$_GET['select5']."',  
-           '".$_GET['select6']."',
-           '".$_GET['select7']."',
-           '".$_GET['select8']."'
-           )";
-
- mysqli_query($link,$sql);
- mysqli_close($link);
+           $sql= "INSERT INTO  users ".
+        
+           "VALUES('$today', '$_GET[name]',  
+           '$_GET[select1]',
+           '$_GET[select2]', 
+           '$_GET[select3]',  
+           '$_GET[select4]',
+           '$_GET[select5]',  
+           '$_GET[select6]',
+           '$_GET[select7]',
+           '$_GET[select8]')";
+           echo "SQL: " . $sql . "<br>";
+mysqli_query($link,$sql);
+mysqli_close($link);
 }
 ?> 
 </body>
